@@ -6,7 +6,6 @@ import { Router, Route, hashHistory } from 'react-router'
 import { getDefaultLdbState, ldbReducer } from './stateMgmt/LdbReducer'
 import { LdbCanvasContainer } from './components/LdbCanvas'
 
-
 const initialState = getDefaultLdbState();
 const store        = createStore( ldbReducer, initialState);
 
