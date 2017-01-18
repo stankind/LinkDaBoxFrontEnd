@@ -39,3 +39,5 @@ jspm_packages
 # Additions by S. Mohler
 # MS-DOS BAT files
 *.bat
+# Windows web link
+*.URL
