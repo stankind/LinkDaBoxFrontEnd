@@ -1,3 +1,5 @@
+var webpack = require("webpack");
+
 module.exports = {
   context: __dirname,
   entry: './app.js',
@@ -28,4 +30,12 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.es6']
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin()
+  ]
 }
