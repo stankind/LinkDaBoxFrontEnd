@@ -1,13 +1,14 @@
 {
-  "name": "stans-webpack-react-demo",
+  "name": "LinkDaBox prototype front end - by Stan Mohler, Jr.",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": ".\\node_modules\\.bin\\webpack-dev-server --display-error-details --config webpack.config.js"
+    "start": ".\\node_modules\\.bin\\webpack-dev-server --display-error-details --config webpack.config.js",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
-  "author": "",
+  "author": "Stan Mohler",
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.21.0",
@@ -28,5 +29,8 @@
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "gh-pages": "^0.12.0"
+  }
 }
