@@ -1,5 +1,5 @@
 {
-  "name": "LinkDaBox prototype front end - by Stan Mohler, Jr.",
+  "name": "LinkDaBoxFrontEnd",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "deploy": "gh-pages -d build"
   },
   "keywords": [],
-  "author": "Stan Mohler",
+  "author": "Stan Mohler, Jr.",
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.21.0",
