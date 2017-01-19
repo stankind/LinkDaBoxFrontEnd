@@ -16,6 +16,6 @@ app.use(express.static(DIST_DIR));
 
 app.get("*", (req, res) => res.sendFile(HTML_FILE));
 
-http.createServer(app).listen(app.get('port'), function(){=
+http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
