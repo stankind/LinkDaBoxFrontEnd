@@ -37,7 +37,5 @@ jspm_packages
 .node_repl_history
 
 # Additions by S. Mohler
-# Windows web link
-*.URL
 # Webpack output directory
 dist

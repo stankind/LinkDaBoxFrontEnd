@@ -15,4 +15,4 @@ echo
 echo "Launching server.  Browse to http://<server ip address>/LinkDaBox"
 echo
 
-npm run prod
+npm run prod-linux

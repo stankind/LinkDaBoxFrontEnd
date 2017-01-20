@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --display-error-details --config webpack.config.js",
-    "build": "webpack -p",
-    "deploy": "gh-pages -d build",
-    "prod": "export NODE_ENV=production && node nodeExpressServer.js"
+    "test":         "echo \"Error: no test specified\" && exit 1",
+    "start":        "webpack-dev-server --display-error-details --config webpack.config.js",
+    "build":        "webpack -p",
+    "deploy":       "gh-pages -d build",
+    "prod-windows": "set NODE_ENV=production && node nodeExpressServer.js",
+    "prod-linux":   "export NODE_ENV=production && node nodeExpressServer.js"
   },
   "keywords": [],
   "author": "Stan Mohler, Jr.",
