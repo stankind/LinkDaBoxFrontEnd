@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --display-error-details --config webpack.config.js",
     "build": "webpack -p",
     "deploy": "gh-pages -d build",
-    "prod": "set NODE_ENV=production && node nodeExpressServer.js"
+    "prod": "env NODE_ENV=production && node nodeExpressServer.js"
   },
   "keywords": [],
   "author": "Stan Mohler, Jr.",
