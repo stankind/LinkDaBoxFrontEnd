@@ -13,7 +13,9 @@ fi
 
 {
 if [ ! -f ./dist/bundle.js ]; then
+  echo "Building and bundling..."
   npm run build
+fi
 }
 
 echo
