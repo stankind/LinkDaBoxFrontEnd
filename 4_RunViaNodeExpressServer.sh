@@ -15,5 +15,4 @@ echo
 echo "Launching server.  Browse to http://<server ip address>/LinkDaBox"
 echo
 
-# env NODE_ENV=production ./nodeExpressServer.js
 npm run prod
