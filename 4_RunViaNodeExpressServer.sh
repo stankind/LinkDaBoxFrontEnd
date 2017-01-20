@@ -12,3 +12,5 @@ fi
 # env NODE_ENV=production ./nodeExpressServer.js
 
 npm run prod
+
+echo "Now browse to http://<server ip address>/LinkDaBox"
