@@ -2,6 +2,6 @@
 
 xcopy index.html dist\. /C /Y
 
-call webpack -p
+call npm run build
 
 pause

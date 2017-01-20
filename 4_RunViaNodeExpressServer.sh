@@ -11,6 +11,11 @@ else
 fi
 }
 
+{
+if [ ! -f ./dist/bundle.js ]; then
+  npm run build
+}
+
 echo
 echo "Launching server.  Browse to http://<server ip address>/LinkDaBox"
 echo
