@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router'
 import { getDefaultLdbState, ldbReducer } from './stateMgmt/LdbReducer'
 import { LdbCanvasContainer } from './components/LdbCanvas'
 
@@ -12,7 +12,7 @@ const store        = createStore( ldbReducer, initialState);
 ReactDOM.render(
 
   <Provider store={store}>
-    <Router history={hashHistory}>
+    <Router history={browserHistory}>
       <Route path='/LinkDaBox' component={LdbCanvasContainer} />
     </Router>
   </Provider>,

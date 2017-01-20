@@ -9,4 +9,6 @@ else
 fi
 }
 
-env NODE_ENV=production ./nodeExpressServer.js
+# env NODE_ENV=production ./nodeExpressServer.js
+
+npm run prod

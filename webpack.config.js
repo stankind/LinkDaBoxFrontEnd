@@ -30,6 +30,9 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.es6']
   },
+  devServer: {
+      historyApiFallback: true
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
