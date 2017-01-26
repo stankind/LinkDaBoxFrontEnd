@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react'
 import { LdbConstants } from '../stateMgmt/LdbState'
 import { connect } from 'react-redux'
-//import { stringifyIgnoreCyclic }     from '../misc/StansUtils'
 import { LdbLinkCollectionContainer } from './LdbLinkCollection'
 import { LdbTextboxCollectionContainer } from './LdbTextboxCollection'
+//import { stringifyIgnoreCyclic }     from '../misc/StansUtils'
 
 class LdbCanvas extends Component {
 
@@ -115,14 +115,20 @@ LdbCanvas.propTypes = {
 // THE CONNECTED (CONTAINER) COMPONENT
 
 
-function mapStateToProps() {
+function mapStateToProps( reduxState) {
+    //console.log('mapStateToProps(): manip id = ' + reduxState.manipulationTargetId)
+
+    if( reduxState.undoable) {
+      // push onto stack
+    }
   return {}
 }
 
 function mapDispatchToProps( dispatch) {
   return {
-    handleLeftClickOnBigDiv: ()=>
-      dispatch( {type: 'RESET_MANIPULATION_MODE'} ),
+    handleLeftClickOnBigDiv: ()=> {
+      dispatch( {type: 'RESET_MANIPULATION_MODE'} )
+    },
     handleLeftDoubleClickOnBigDiv: (x,y)=>
       dispatch( {type: 'ADD_TEXTBOX', data:{x:x,y:y}} ),
     handleMouseMovedOnBigDiv: ( mouseBigDivX, mouseBigDivY)=>

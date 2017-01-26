@@ -28,6 +28,7 @@ export class LdbTextboxCollection extends Component {
                       dragbarColor={textbox.dragbarColor} linkBtnColor={textbox.linkBtnColor}
                       closeBtnColor={textbox.closeBtnColor} resizerColor={textbox.resizerColor} 
                       dragbarCursorStyleIsPointer={textbox.dragbarCursorStyleIsPointer}
+                      rawContentJson={textbox.rawContentJson}
 
                       onMouseEnterDragbar={ (id)=>this.props.onMouseEnterDragbar(id) }
                       onLeftMouseDownOnDragbar={ (e,id)=>this.props.onLeftMouseDownOnDragbar(e,id) }
@@ -165,7 +166,7 @@ function mapDispatchToProps( dispatch) {
       onLeftMouseUpOnResizer: () =>
            dispatch( {type: 'RESET_MANIPULATION_MODE'}),
 
-      onLeftMouseDownOnEditor: (textboxId) =>    // TODO - does nothing, so remove!
+      onLeftMouseDownOnEditor: (textboxId) =>    // TODO - doesn't work
            dispatch( {type: 'POP_TEXTBOX_TO_TOP',
                       data: {id: textboxId} }),
 

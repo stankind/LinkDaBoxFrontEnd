@@ -3,8 +3,25 @@ import { LdbConstants, LdbManipulationModes, LdbHoverModes, canLink } from './Ld
 //import { stringifyIgnoreCyclic } from '../misc/StansUtils'
 import { Map } from 'immutable'
 
+function getDefaultRawContentJson() {
+    const defaultRawContentJson =
+    
+//              '{"entityMap":{},"blocks":[\
+//                  {"key":"ed6so","text":"Type here!","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}},\
+//                  {"key":"61oan","text":"Line 2","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}},\
+//                  {"key":"eeaq8", "text":"Line 3","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}\
+//              ]}'
+
+              '{"entityMap":{},"blocks":[\
+                  {"key":"ed6so","text":"Type here!","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}\
+              ]}'
+
+    return defaultRawContentJson
+}
 
 export function getDefaultLdbState() {
+
+  const defaultRawContentJson = getDefaultRawContentJson()
 
   const defaultState0 = {
     manipulationMode: LdbManipulationModes.NONE,
@@ -14,7 +31,8 @@ export function getDefaultLdbState() {
     textboxes: Map(),
     links:     Map(),
     textboxDragData: null,
-    textboxResizeData: null
+    textboxResizeData: null,
+    rawContentJson: defaultRawContentJson
   };
 
   const stateOneTb    = ldbReducer( defaultState0, {type:'ADD_TEXTBOX', data: {x:20, y:20 }});
@@ -80,7 +98,7 @@ export function ldbReducer( currentState = defaultState, action) {
 
   var newId, newState;
 
-  const defaultRawContentJson = '{"entityMap":{},"blocks":[{"key":"ed6so","text":"Hello!","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}},{"key":"61oan","text":"","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}},{"key":"eeaq8", "text":"Hello again!","type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{}}]}';
+  const defaultRawContentJson = getDefaultRawContentJson();
 
   switch( action.type) {
 
@@ -450,6 +468,17 @@ export function ldbReducer( currentState = defaultState, action) {
         textboxDragData:         null,
         textboxResizeData:       null
       };
+
+
+      // TODO - push newState onto undo/redo stack, when ready
+      if( currentState.manipulationMode == LdbManipulationModes.DRAGGING_TEXTBOX) {
+        console.log('WAS DRAGGING, TIME TO PUSH A NEW LOCATION')
+      }
+      else if( currentState.manipulationMode == LdbManipulationModes.RESIZING_TEXTBOX) {
+        console.log('WAS RESIZING, TIME TO PUSH A NEW SIZE')
+      }
+
+
       return newState;   
 
 
@@ -481,7 +510,7 @@ export function ldbReducer( currentState = defaultState, action) {
                 textboxDragData:         newState.textboxDragData,
                 textboxResizeData:       newState.textboxResizeData
              };
-             return newState; 
+             return newState;
            }
      }
 

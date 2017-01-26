@@ -3,7 +3,6 @@ import LdbLink from './LdbLink'
 import { LdbConstants, LdbManipulationModes, LdbHoverModes, getTextboxCenter } from '../stateMgmt/LdbState'
 import { getWhereArrowTouchesTextbox } from './LdbCanvasUtils'
 import { connect } from 'react-redux'
-//import { stringifyIgnoreCyclic } from '../misc/StansUtils'
 import { Map } from 'immutable'
 //import { stringifyIgnoreCyclic } from '../misc/StansUtils'
 

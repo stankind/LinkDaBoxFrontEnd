@@ -5,7 +5,6 @@ export default class LdbTextbox extends Component {
 
   constructor() {
     super();
-    this.rawContentJson = ''
   }
 
   handleLeftDoubleClickByIgnoring(e) {
@@ -166,7 +165,7 @@ export default class LdbTextbox extends Component {
         borderBottom: '2px solid gray'
       };
 
-      var editorStyle = { // TODO - does anything??
+      var editorStyle = { // TODO - does anything?
         boxSizing: 'border-box'
       };
 
@@ -211,7 +210,7 @@ export default class LdbTextbox extends Component {
 
 
           <div style={draftJsDivContainerStyle}>
-            <LdbEditor style={editorStyle} rawContentJson={this.rawContentJson}
+            <LdbEditor style={editorStyle} rawContentJson={this.props.rawContentJson}
                        onMouseDown={ (e)=>this.handleMouseDownOnEditor(e) }
                        onEditorChangedHandler={ (rawContentJson)=>this.handleEditorChanged(rawContentJson)} />
           </div>
@@ -244,6 +243,7 @@ LdbTextbox.propTypes = {
   closeBtnColor:                PropTypes.string.isRequired,
   resizerColor:                 PropTypes.string.isRequired,
   dragbarCursorStyleIsPointer:  PropTypes.bool.isRequired,
+  rawContentJson:               PropTypes.string.isRequired,
 
   onMouseEnterDragbar:          PropTypes.func.isRequired,
   onLeftMouseDownOnDragbar:     PropTypes.func.isRequired,
